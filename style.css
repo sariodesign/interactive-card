@@ -1,0 +1,169 @@
+:root {
+    --input-active-color: linear-gradient(hsl(249, 99%, 64%),hsl(278, 94%, 30%));
+    --input-error-color: hsl(0, 100%, 66%);
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+    --base-font: 'Space Grotesk', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--base-font);
+    font-size: 18px;
+    margin: 0;
+}
+
+@media (min-width: 1440px) {
+    body {
+        align-items: center;
+        background-color: #eee;
+        display: flex;
+        min-height: 100vh;
+    }
+}
+
+@media (min-width: 1440px) {
+    .layout {
+        background-color: #fff;
+        display: grid;
+        grid-template-columns: 483px calc(1440px - 483px);
+        max-width: 1440px;
+        margin: 0 auto;
+        align-items: center;
+    }
+}
+
+.card-container {
+    position: relative
+}
+
+.card-container picture img {
+    object-fit: cover;
+}
+
+.card-back,
+.card-front {
+    position: absolute;
+}
+
+@media (min-width: 1440px) {
+    .card-front {
+        color: var(--white);
+        left: 164px;
+        top: 187px;
+    }
+
+    .card-back {
+        left: 258px;
+        bottom: 187px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .form-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .form-container form {
+        width: 380px;
+    }
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 28px;
+}
+
+.form-input label {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.form-input input {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--white);
+    border: 0;
+    border-radius: 6px;
+    height: 43px;
+    left: 1px;
+    position: relative;
+    padding: 0 16px;
+    text-transform: capitalize;
+    top: 1px;
+    width: calc(100% - 2px);
+    z-index: 2;
+}
+
+.form-input input:focus,
+.form-input input:focus-visible {
+    outline: none
+}
+
+.form-input input:focus + .form-bg,
+.form-input input:focus-visible + .form-bg {
+    background: var(--input-active-color)
+}
+
+.form-input-group {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.form-input-container {
+    height: 45px;
+    position: relative;
+}
+
+.form-bg {
+    background: var(--dark-grayish-violet);
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    z-index: 1;
+}
+
+.card-name,
+.card-number,
+.card-month,
+.card-year,
+.card-cvc {
+    bottom: 30px;
+    left: 33px;
+    position: absolute;
+    text-transform: uppercase;  
+}
+
+.card-number {
+    bottom: 77px;
+    font-size: 32px;
+}
+
+.card-year {
+    left: auto;
+    right: 35px;
+}
+
+.card-cvc {
+    bottom: 120px;
+    left: auto;
+    right: 60px;
+}
+
+.form-input input[type="submit"] {
+    background-color: var(--very-dark-violet);
+    color: var(--white);
+    cursor: pointer;
+    font-family: var(--base-font);
+}
