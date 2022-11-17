@@ -41,8 +41,10 @@
         <img src="./images/bg-card-front.png" alt="Bg card front" />
         <div class="card-name" data-fullname>Firstname Lastname</div>
         <div class="card-number" data-card-number>0000 0000 0000 0000</div>
-        <div class="card-month" data-card-month></div>
-        <div class="card-year" data-card-year></div>
+        <div class="card-date" data-card-date>
+          <span>00</span>
+          <span>00</span>
+        </div>
       </div>
     </div>
     <div class="form-container">
@@ -68,11 +70,11 @@
             <label for="date">Exp. Date (MM/YY)</label>
             <div class="form-input-group">
               <div class="form-input-container">
-                <input data-input="card-month" class="js-input" type="text" name="date" placeholder="MM" required minlength="1" maxlength="2" pattern="[0-9]">
+                <input data-input="card-date" class="js-input" type="text" name="date" placeholder="MM" required minlength="1" maxlength="2" pattern="(0[1-9]|1[0-2])">
                 <div class="form-bg"></div>
               </div>
               <div class="form-input-container">
-                <input data-input="card-year" class="js-input" type="text" name="date" placeholder="YY" required minlength="1" maxlength="2" pattern="[0-9]">
+                <input data-input="card-date" class="js-input" type="text" name="date" placeholder="YY" required minlength="1" maxlength="2" pattern="[0-9]">
                 <div class="form-bg"></div>
               </div>
             </div>

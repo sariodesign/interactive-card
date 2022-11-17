@@ -18,10 +18,15 @@ body {
     margin: 0;
 }
 
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
 @media (min-width: 1440px) {
     body {
         align-items: center;
-        background-color: #eee;
+        background-color: var(--light-grayish-violet);
         display: flex;
         min-height: 100vh;
     }
@@ -29,7 +34,7 @@ body {
 
 @media (min-width: 1440px) {
     .layout {
-        background-color: #fff;
+        background-color: var(--white);
         display: grid;
         grid-template-columns: 483px calc(1440px - 483px);
         max-width: 1440px;
@@ -48,20 +53,41 @@ body {
 
 .card-back,
 .card-front {
+    max-height: 158px;
+    max-width: 286px;
     position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.card-front {
+    left: 16px;
+    top: 124px;
+}
+
+.card-back {
+    left: 72px;
 }
 
 @media (min-width: 1440px) {
     .card-front {
         color: var(--white);
         left: 164px;
+        max-height: none;
+        max-width: none;
+        right: auto;
         top: 187px;
     }
 
     .card-back {
-        left: 258px;
         bottom: 187px;
+        left: 258px;
+        top: auto;
     }
+}
+
+.form-container {
+    padding: 94px 24px 0;
 }
 
 @media (min-width: 1440px) {
@@ -82,6 +108,7 @@ body {
 }
 
 .form-input label {
+    font-size: 14px;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
@@ -123,6 +150,15 @@ body {
     position: relative;
 }
 
+.form-input-group .form-input-container {
+    width: 72px
+}
+
+.form-input-group .form-input:nth-child(2),
+.form-input-group .form-input:nth-child(2) .form-input-container {
+    width: 100%;
+}
+
 .form-bg {
     background: var(--dark-grayish-violet);
     border-radius: 6px;
@@ -134,31 +170,96 @@ body {
     z-index: 1;
 }
 
-.card-name,
 .card-number,
-.card-month,
-.card-year,
+.card-name,
+.card-date,
 .card-cvc {
-    bottom: 30px;
     left: 33px;
     position: absolute;
     text-transform: uppercase;  
 }
 
-.card-number {
-    bottom: 77px;
-    font-size: 32px;
+@media (min-width: 1440px) {
+    .card-number,
+    .card-name,
+    .card-date,
+    .card-cvc {
+        bottom: 30px;
+    }
 }
 
-.card-year {
+.card-number {
+    bottom: 52px;
+    color: var(--white);
+    font-size: 18px;
+}
+
+@media (min-width: 1440px) {
+    .card-number {
+        bottom: 52px;
+        font-size: 32px
+    }
+}
+
+.card-name {
+    bottom: 22px;
+    color: var(--white);
+    font-size: 10px;
+}
+
+@media (min-width: 1440px) {
+    .card-name {
+        font-size: 18px
+    }
+}
+
+
+.card-date {
+    bottom: 22px;
+    color: var(--white);
+    font-size: 10px;
     left: auto;
     right: 35px;
 }
 
+@media (min-width: 1440px) {
+    .card-date {
+        font-size: 18px;
+    }
+}
+
 .card-cvc {
     bottom: 120px;
+    color: var(--white);
     left: auto;
     right: 60px;
+}
+
+@media (min-width: 1440px) {
+    .card-cvc {
+        bottom: 120px;
+        left: auto;
+        right: 60px;
+    }
+}
+
+.form-input input[data-input="card-date"]:first-child {
+    border-radius: 6px;
+}
+
+.form-input input[data-input="card-date"]:first-child + .form-bg {
+    border-radius: 6px;
+    width: 100%
+}
+
+.form-input input[data-input="card-date"]:last-child {
+    border-left: 0;
+    border-radius: 0 6px 6px 0;
+}
+
+.form-input input[data-input="card-date"]:last-child + .form-bg {
+    border-radius: 0 6px 6px 0;
+    width: 100%
 }
 
 .form-input input[type="submit"] {

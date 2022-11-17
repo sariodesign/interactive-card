@@ -24,6 +24,10 @@ const splitCardNumber = (numberString) => {
     return numberString ? numberString.match(regex).join(' ') : placeholderCardNumber;
 }
 
+const fillDate = (numberDate) => {
+    console.log(numberDate);
+}
+
 inputFields.forEach((item) => {
     item.addEventListener('keyup', (e) => {
         let dataInput = e.target.dataset.input;
@@ -36,9 +40,9 @@ inputFields.forEach((item) => {
                 console.log('Input')
                 fillCardField(dataInput, splitCardNumber(inputContent))
                 break;
-            case 'card-month':
-                break;
-            case 'card-year':
+            case 'card-date':
+                console.dir(e.target)
+                fillDate(inputContent)
                 break;
             case 'card-cvc':
                 break;
